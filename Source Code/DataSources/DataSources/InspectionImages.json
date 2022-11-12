@@ -1,0 +1,9 @@
+[
+  {
+    "AddinConnectorId": "44099e5d-98a4-43ed-a1ac-d98d03683930",
+    "AddinId": "6d1f157d-95bf-406d-b65d-cfd3240f724e",
+    "Name": "InspectionImages",
+    "ServiceKind": "AddinWadl",
+    "Type": "ServiceInfo"
+  }
+]
