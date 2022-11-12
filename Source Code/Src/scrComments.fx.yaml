@@ -1,0 +1,91 @@
+scrComments As screen:
+    OnVisible: =
+
+    Rectangle1_11 As rectangle:
+        Height: =135
+        Width: =768
+        ZIndex: =1
+
+    Label1_11 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =135
+        Size: =28
+        Text: =galControlRoom.Selected.lblQuestions.Text & "            Comments"
+        Width: =660
+        X: =107
+        ZIndex: =2
+
+    Icon1_8 As icon.Home:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =86
+        Icon: =Icon.BackArrow
+        OnSelect: =Back()
+        Width: =93
+        Y: =24
+        ZIndex: =3
+
+    txtComments As text:
+        Default: =""
+        FontWeight: =FontWeight.Semibold
+        Height: =543
+        HintText: ="Comments"
+        Mode: =TextMode.MultiLine
+        Size: =30
+        Width: =673
+        X: =54
+        Y: =226
+        ZIndex: =4
+
+    Gallery4 As gallery.galleryVertical:
+        Height: =414
+        Items: |-
+            =Filter(
+                Comments,
+                CommentsID = galControlRoom.Selected.ID,
+                WorksOrderID = galWorksOrder.Selected.Wonum
+            )
+        Layout: =Layout.Vertical
+        TemplateSize: =229
+        Width: =768
+        Y: =950
+        ZIndex: =5
+
+        Label6 As label:
+            Height: =106
+            OnSelect: =Select(Parent)
+            Size: =30
+            Text: =ThisItem.Comments
+            Width: =758
+            Y: =73
+            ZIndex: =1
+
+        Label4 As label:
+            Height: =73
+            OnSelect: =Select(Parent)
+            Size: =20
+            Text: |-
+                = " Question:  "&Gallery6.Selected.Questions
+            Width: =758
+            ZIndex: =2
+
+    Button2 As button:
+        Height: =56
+        OnSelect: |-
+            =Patch(
+                Comments,
+                {
+                    CommentsID: galControlRoom.Selected.ID,
+                    WorksOrderID: galWorksOrder.Selected.Wonum,
+                    Comments: txtComments.Text
+            
+                }
+            );
+            Reset(txtComments);
+            Navigate('scrControl Room')
+        Text: ="Post comment"
+        Width: =203
+        X: =512
+        Y: =800
+        ZIndex: =6
+
