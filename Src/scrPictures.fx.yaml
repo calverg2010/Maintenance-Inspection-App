@@ -1,0 +1,298 @@
+scrPictures As screen:
+    OnVisible: |
+        =false
+
+    Rectangle1_10 As rectangle:
+        Height: =135
+        Width: =768
+        ZIndex: =1
+
+    Label1_10 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =65
+        Size: =30
+        Text: ="Images"
+        Width: =569
+        X: =93
+        ZIndex: =2
+
+    Icon1_7 As icon.Home:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =86
+        Icon: =Icon.BackArrow
+        OnSelect: =Back()
+        Width: =93
+        Y: =24
+        ZIndex: =3
+
+    frmPictures As form:
+        AcceptsFocus: =false
+        DataSource: =Images
+        DefaultMode: =FormMode.New
+        Height: =317
+        Visible: =false
+        Width: =768
+        Y: =170
+        ZIndex: =6
+
+        Attachments_DataCard1 As typedDataCard.attachmentsEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="{Attachments}"
+            Default: =ThisItem.Attachments
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Images],DataSourceInfo.DisplayName,"{Attachments}")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =218
+            Required: =false
+            Update: =ImageAttachments.Attachments
+            Visible: =false
+            Width: =768
+            X: =0
+            Y: =0
+            ZIndex: =7
+
+            DataCardKey4 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            ImageAttachments As attachments:
+                AddAttachmentText: ="Take Photo or attach file"
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DisplayMode: =Parent.DisplayMode
+                Height: =125
+                IsInDataCard: =true
+                Items: =Parent.Default
+                PaddingBottom: =5
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PaddingRight: =5
+                PaddingTop: =5
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey4.Y + DataCardKey4.Height + 5
+                ZIndex: =2
+
+            ErrorMessage4 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =ImageAttachments.Y + ImageAttachments.Height
+                ZIndex: =3
+
+            StarVisible4 As label:
+                Align: =Align.Center
+                Height: =DataCardKey4.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey4.Y
+                ZIndex: =4
+
+    Button5 As button:
+        OnSelect: |-
+            =/*ClearCollect(
+                colImages,
+                ImageAttachments.Attachments,
+                galWorksOrder.Selected.field_7
+            );
+            //save attachments in a collection
+            SaveData(
+                colImages,
+                "LocalSavedItems"
+            );
+            //save this collection to local 
+            ResetForm(frmImages);
+            //Reset form
+            Patch(
+                Images,
+                Defaults(Images),
+                {Title: galWorksOrder.Selected.field_7,
+                Attachments:ImageAttachments
+                }
+            )*/
+        Text: ="Save"
+        Visible: =false
+        X: =568
+        Y: =152
+        ZIndex: =7
+
+    Form1 As form:
+        DataSource: =Images
+        DefaultMode: =FormMode.New
+        Height: =250
+        Width: =768
+        Y: =235
+        ZIndex: =9
+
+        Attachments_DataCard2 As typedDataCard.attachmentsEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="{Attachments}"
+            Default: =ThisItem.Attachments
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Images],DataSourceInfo.DisplayName,"{Attachments}")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue2.Attachments
+            Visible: =false
+            Width: =768
+            X: =0
+            Y: =0
+            ZIndex: =10
+
+            DataCardKey2 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue2 As attachments:
+                AddAttachmentText: ="Take Photo"
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DisplayMode: =Parent.DisplayMode
+                Height: =107
+                IsInDataCard: =true
+                Items: =Parent.Default
+                PaddingBottom: =5
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PaddingRight: =5
+                PaddingTop: =5
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey2.Y + DataCardKey2.Height + 5
+                ZIndex: =2
+
+            ErrorMessage2 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue2.Y + DataCardValue2.Height
+                ZIndex: =3
+
+            StarVisible2 As label:
+                Align: =Align.Center
+                Height: =DataCardKey2.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey2.Y
+                ZIndex: =4
+
+    Button6 As button:
+        OnSelect: |-
+            =Patch(
+                Images,
+                Defaults(Images),
+                Form1.Updates,
+                {Title: galWorksOrder.Selected.Wonum}
+            )
+        Text: ="Save Images"
+        Visible: =false
+        X: =250
+        Y: =400
+        ZIndex: =10
+
+    AttachmentControl_1 As attachments:
+        AddAttachmentText: ="Add PHOTO here"
+        BorderColor: =RGBA(255, 255, 255, 1)
+        BorderStyle: =BorderStyle.None
+        Fill: =Transparent
+        Height: =269
+        HoverBorderColor: =RGBA(255, 255, 255, 1)
+        HoverColor: =RGBA(56, 96, 178, 1)
+        HoverFill: |-
+            =//RGBA(186, 202, 226, 1)
+            Transparent
+        IsInDataCard: =true
+        Items: =
+        MaxAttachments: =5
+        NoAttachmentsText: =""
+        OnAddFile: |-
+            =/*Set(varFromAttachmentControl, JSON(Image7.Image, JSONFormat.IncludeBinaryData));
+            Set(varBase64Only, Mid(varFromAttachmentControl, Find(",",varFromAttachmentControl)+1,Len(varFromAttachmentControl) - Find(",",varFromAttachmentControl)-1));
+            'Meeting-Uploadfile'.Run(VarMeetingMainID,User().FullName,VarMeetingMainID,Last(AttachmentControl.Attachments).Name,varBase64Only,VarMeetingMainID,galAgendaItems.Selected.ID);
+            Reset(AttachmentControl);
+            Refresh(MeetingLB)*/
+        PaddingRight: =5
+        PressedFill: =Transparent
+        Size: =30
+        Tooltip: =
+        Width: =Parent.Width-10
+        X: =10
+        Y: =83
+        ZIndex: =11
+
+    Button2_2 As button:
+        Fill: =RGBA(0, 56, 150, 1)
+        Height: =96
+        OnSelect: |-
+            =Set(varFromAttachmentControl, JSON(Image7_1.Image, JSONFormat.IncludeBinaryData));
+            Set(varBase64Only, Mid(varFromAttachmentControl, Find(",",varFromAttachmentControl)+1,Len(varFromAttachmentControl) - Find(",",varFromAttachmentControl)-1));
+            InspectionImages.Run(
+               Gallery5.Selected.Wonum,
+                Gallery3.Selected.Label7.Text,
+                 Last(AttachmentControl_1.Attachments).Name,
+                varBase64Only,
+              cbSubstations.Selected.Result,
+              Value(Gallery6.Selected.ID)
+                );
+            Reset(AttachmentControl_1);
+            Set(varVis_AddPhoto,false)
+        RadiusBottomLeft: =2
+        RadiusBottomRight: =2
+        RadiusTopLeft: =2
+        RadiusTopRight: =2
+        Size: =30
+        Text: ="Upload"
+        Width: =226
+        X: =250
+        Y: =388
+        ZIndex: =12
+
+    Image7_1 As image:
+        Height: =80
+        Image: =Last(AttachmentControl_1.Attachments).Value
+        Y: =738
+        ZIndex: =13
+
+    Label1_13 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =65
+        Size: =30
+        Text: ="W/O "& Gallery5.Selected.Wonum
+        Width: =569
+        X: =93
+        Y: =65
+        ZIndex: =14
+
