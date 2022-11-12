@@ -1,0 +1,213 @@
+{
+  "47d985c6-96cb-4077-8a5c-5632732f0e3a": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Outlook",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1580/1.0.1580.2838/office365/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Outlook"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "47d985c6-96cb-4077-8a5c-5632732f0e3a"
+  },
+  "79cec0a4-c758-43f5-987b-ecacf0fe1906": {
+    "connectionParameters": {
+      "workFlowCallbackUri": "https://prod-52.westeurope.logic.azure.com:443/workflows/cc30fb8a962b4f5c9a535323fe5930e5/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=mhxYf46We7v6VuSzOGph2jxyHF3-DiYH-ivtrC0JaZc",
+      "workflowEndpoint": "/subscriptions/72c9792d-e7e6-4eb5-b764-fc599b9b3005/resourceGroups/93aedbdccc674652aa12d250a876ae79-8b74218c841e425bb01b85db8d49c679/providers/Microsoft.Logic/workflows/44099e5d-98a4-43ed-a1ac-d98d03683930",
+      "workflowName": "44099e5d-98a4-43ed-a1ac-d98d03683930",
+      "workflowPath": "/subscriptions/72c9792d-e7e6-4eb5-b764-fc599b9b3005/resourceGroups/93aedbdccc674652aa12d250a876ae79-8b74218c841e425bb01b85db8d49c679/providers/Microsoft.Logic/workflows/44099e5d-98a4-43ed-a1ac-d98d03683930"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1534/1.0.1534.2605/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "ea93ca3b-6dc8-43ed-9db7-c37f072d833b": {
+          "value": "shared_sharepointonline"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "44099e5d-98a4-43ed-a1ac-d98d03683930"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_sharepointonline": {
+          "value": "ea93ca3b-6dc8-43ed-9db7-c37f072d833b"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "44099e5d-98a4-43ed-a1ac-d98d03683930"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "InspectionImages"
+    ],
+    "dependencies": {
+      "shared_sharepointonline": "ea93ca3b-6dc8-43ed-9db7-c37f072d833b"
+    },
+    "dependents": [],
+    "id": "79cec0a4-c758-43f5-987b-ecacf0fe1906"
+  },
+  "9646dab6-7e64-47d9-b6a4-735b50a0963e": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1578/1.0.1578.2813/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://eskom.sharepoint.com/teams/WCOUBIPM/msm": {
+        "dataSources": {
+          "Attendance": {
+            "tableName": "1bb6f005-4f8f-4bcc-bc0f-a921b6917dd3"
+          },
+          "Comments": {
+            "tableName": "8b76ed51-cbda-4ba8-9042-b91a6276497a"
+          },
+          "Inspection_Buttons": {
+            "tableName": "2da40aa6-f70a-4129-ab19-f85de6bc2554"
+          },
+          "InspectionAnswer": {
+            "tableName": "d6783651-6e27-4816-b68d-e7c1520a7325"
+          },
+          "InspectionFormDetail": {
+            "tableName": "b11c5547-1f8d-433e-ae15-39ddad9911b4"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "InspectionFormDetail",
+      "Attendance",
+      "Inspection_Buttons",
+      "Comments",
+      "InspectionAnswer"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "9646dab6-7e64-47d9-b6a4-735b50a0963e"
+  },
+  "ea93ca3b-6dc8-43ed-9db7-c37f072d833b": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1578/1.0.1578.2813/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://eskom.sharepoint.com/teams/WCOUBIPM/msm": {
+        "dataSources": {
+          "Aux Equipment": {
+            "tableName": "99265804-988a-4577-bf5a-97e8b1179a28"
+          },
+          "Battery Room": {
+            "tableName": "5f7aa4f7-55f4-4499-8f88-35c7cad4ff81"
+          },
+          "Breakers": {
+            "tableName": "9798a4c0-0a12-4d72-93b6-b43fe81ae528"
+          },
+          "Control Room": {
+            "tableName": "dd308698-790e-42af-9547-2b3402943cc8"
+          },
+          "General": {
+            "tableName": "164d8d55-233a-4642-91b8-437bc8caa58a"
+          },
+          "Images": {
+            "tableName": "24b96c96-da83-457c-9b69-acad7eb54984"
+          },
+          "Inspection Area": {
+            "tableName": "d3841c4c-ef94-4cb9-b773-815968961954"
+          },
+          "Inspection Area_1": {
+            "tableName": "d3841c4c-ef94-4cb9-b773-815968961954"
+          },
+          "Inspection Detail": {
+            "tableName": "b11c5547-1f8d-433e-ae15-39ddad9911b4"
+          },
+          "Inspection Images": {
+            "tableName": "9902a947-23ba-4799-ab60-aa4eee6119c6"
+          },
+          "InspectionQuestions": {
+            "tableName": "61561d79-8cc4-432e-adc7-b096a1257456"
+          },
+          "Isolators": {
+            "tableName": "c9adea61-b633-4ab4-b48b-219b1263a76f"
+          },
+          "JobPlanNumber": {
+            "tableName": "3d75f6bc-6ae5-42ad-9729-e7e8f17fb4a1"
+          },
+          "Substation List": {
+            "tableName": "e427f5c1-c0b4-4113-9134-1a7bdc399a9c"
+          },
+          "Transformers": {
+            "tableName": "ae490884-3a43-4308-a080-cb51bd8ad954"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Inspection Area",
+      "Inspection Detail",
+      "Control Room",
+      "Substation List",
+      "Breakers",
+      "Battery Room",
+      "General",
+      "Inspection Area_1",
+      "Isolators",
+      "Transformers",
+      "Aux Equipment",
+      "InspectionQuestions",
+      "Inspection Images",
+      "Images",
+      "JobPlanNumber"
+    ],
+    "dependencies": {},
+    "dependents": [
+      "79cec0a4-c758-43f5-987b-ecacf0fe1906"
+    ],
+    "id": "ea93ca3b-6dc8-43ed-9db7-c37f072d833b"
+  },
+  "fbe6ce19-1c3e-4093-931e-6e41119a7889": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Users",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1573/1.0.1573.2770/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Users"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "fbe6ce19-1c3e-4093-931e-6e41119a7889"
+  }
+}
