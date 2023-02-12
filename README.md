@@ -20,3 +20,6 @@ Connect to SharePoint: The application integrates with SharePoint as a data sour
 Start using the app: You are now ready to start using the app to conduct substation inspections. Simply select the substation and work order to start the inspection process.
 
 Please note that you may need to have administrative permissions in Power Apps and SharePoint in order to install and use the application. If you encounter any issues during the installation process, please consult the Power Apps support documentation or reach out to the Power Apps community for help.
+
+**Contact information**
+ If anyone has any questions or needs further assistance with the Power Apps application for mobile substation inspection, you can reach out to me at the email address calverg4real@gmail.com.
