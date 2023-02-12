@@ -1,1 +1,6 @@
 # Maintenance-Inspection-App
+The Power Apps application for mobile substation inspection is a tool designed for Eskom, an electricity utility in South Africa. It streamlines the inspection process at substations by providing a user-friendly interface for technical officials to conduct inspections. The application integrates with SharePoint as a data source for all work orders and uses Power Automate to save pictures to a SharePoint image library.
+
+The technical official begins by selecting the substation and work order to start the inspection. The app then guides the inspector through the different inspection areas or equipment, presenting inspection questions and allowing the inspector to capture pictures and annotate them with relevant information. The meta data and filename of each picture includes the substation name, work order number, inspection area or equipment, and inspection question number.
+
+This Power Apps application helps to improve the accuracy and efficiency of substation inspections by providing a centralized platform for capturing and organizing inspection data. With its integration with SharePoint and Power Automate, the app ensures that all inspection data is securely stored and easily accessible for future reference on sharepoint.
